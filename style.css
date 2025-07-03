@@ -1,0 +1,133 @@
+/* Body Styling */
+
+body {
+    overflow: hidden;
+    background-color: linear-gradient(right rgba(124, 54, 85, 0.133), #12319f);
+    background: radial-gradient(circle, #ff1f1f00, #1c47e3 100%);
+}
+
+
+/* Mic Container */
+
+.mic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+
+/* Circle Background Animations */
+
+.mic::before,
+.mic::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 2;
+    box-shadow: 0 0 20px 20px #e6e1e1;
+}
+
+.mic::before {
+    width: 400px;
+    height: 400px;
+    background: #0c38c6;
+}
+
+.mic::after {
+    width: 250px;
+    height: 250px;
+    background-color: #000000;
+    animation: circle-size 0.8s linear infinite alternate;
+}
+
+
+/* Mic Icon (Body) */
+
+.mic-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: #040404;
+}
+
+
+/* Mic Glow/Shadow Animation */
+
+.mic-shadow {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    z-index: 1;
+    box-shadow: 10px -55px 30px 15px #fff9f9, 24px -10px 47px 10px #f6f7ff, -21px -25px 97px 10px #376ece, 51px 5px 17px 10px #3561ba, 3px 10px 35px 10px #ffb3f3;
+    animation: shadow-rotate 1.5s linear infinite;
+    transform-origin: center;
+}
+
+.speech-text {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* Keyframes */
+
+@keyframes circle-size {
+    from {
+        width: 250px;
+        height: 250px;
+    }
+    to {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@keyframes shadow-rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+    .mic-shadow {
+        width: 250px;
+        height: 250px;
+    }
+    .mic::before {
+        width: 300px;
+        height: 300px;
+    }
+    .mic-icon {
+        transform: translate(-50%, -50%) scale(4);
+    }
+    .mic-icon::after {
+        width: 6px;
+        height: 12px;
+    }
+    .mic-icon::before {
+        height: 35px;
+    }
+}
