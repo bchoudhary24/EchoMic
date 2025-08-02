@@ -49,7 +49,7 @@ function speakText(text) {
     speechSynthesis.speak(utterance);
 }
 
-recognition.onerror = function(event) {
-    outputDiv.innerHTML = `<span style ="color:red;">Error:${event.erro}</span>`;
-
+recognition.onerror = function(event){
+    outputDiv.innerHTML=`<span style ="color:red;">Error:${event.erro}</span>`;
 };
+
