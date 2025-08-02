@@ -50,5 +50,6 @@ function speakText(text) {
 }
 
 recognition.onerror = function(event) {
-    outputDiv.innerHTML = `< span style = "color:red;" > Error: $ { event.error } < /span>`;
+    outputDiv.innerHTML = `<span style ="color:red;">Error:${event.erro}</span>`;
+
 };
